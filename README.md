@@ -11,7 +11,7 @@ makecode I2C 液晶 1602 软件包
 
 打开 makecode 编辑器，在项目中选择添加软件包，然后在地址栏输入下面网址  
 
-"https://github.com/microbit-makecode-packages/I2CLCD1620_cn"  
+https://github.com/microbit-makecode-packages/I2CLCD1620_cn  
 
 搜索后就可以添加并使用本软件包了。
 
