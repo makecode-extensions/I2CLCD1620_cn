@@ -4,6 +4,8 @@ makecode I2C 液晶 1602 软件包
 
 作者: shaoziyang  
 日期: 2018.Mar  
+
+![](https://raw.githubusercontent.com/microbit-makecode-packages/I2CLCD1620_cn/master/icon.png)  
   
 ![](https://raw.githubusercontent.com/microbit-makecode-packages/I2CLCD1620_cn/master/lcd.jpg)
 
