@@ -1,6 +1,6 @@
 {
     "name": "I2C_LCD1602",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "makecode 的 micro:bit I2C 液晶 1602 软件包",
     "license": "MIT",
     "dependencies": {

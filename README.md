@@ -24,36 +24,42 @@ https://github.com/microbit-makecode-packages/I2CLCD1620_cn
 
 ## API
 
-- **液晶初始化**(address: number)  
+- **LcdInit**(address: number)  
 初始化 LCD  
 address: I2C 地址  
 
-- **显示数字**(n: number, x: number, y: number)  
+- **ShowNumber**(n: number, x: number, y: number)  
 在液晶的指定位置显示数字。  
 n: 数字  
 x: 液晶X轴坐标, [0 - 15]  
 y: 液晶Y轴坐标, [0 - 1]  
 
-- **显示字符串**(s: string, x: number, y: number)  
+- **ShowString**(s: string, x: number, y: number)  
 在液晶指定位置显示字符串show a string in LCD at given position.  
 s: 将要显示的英文字符串  
 x: 液晶X轴坐标, [0 - 15]  
 y: 液晶Y轴坐标, [0 - 1]  
 
-- **打开液晶**()  
+- **on**()  
 打开液晶的显示功能
 
-- **关闭液晶**()  
+- **off**()  
 关闭液晶  
 
-- **清除液晶**()  
+- **clear**()  
 清除液晶显示的内容  
 
-- **打开液晶背光**()  
+- **BacklightOn**()  
 打开液晶的背光灯  
 
-- **关闭液晶背光**()  
+- **BacklightOff**()  
 关闭液晶的背光灯  
+
+- shl()
+屏幕向左移动
+
+- shr()
+屏幕向右移动 
 
 ## 演示
 
