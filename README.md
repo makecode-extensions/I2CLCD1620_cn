@@ -27,6 +27,9 @@ https://github.com/microbit-makecode-packages/I2CLCD1620_cn
 - **LcdInit**(address: number)  
 初始化 LCD  
 address: I2C 地址  
+ 0: 自动识别地址  
+ 39: PCF8574  
+ 63: PCF8574A
 
 - **ShowNumber**(n: number, x: number, y: number)  
 在液晶的指定位置显示数字。  

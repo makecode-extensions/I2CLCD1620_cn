@@ -42,6 +42,34 @@ namespace I2C_LCD1602 {
         set(d << 4)
     }
 
+    // 自动识别I2C地址
+    function AutoAddr() {
+        let k = true
+        let addr = 0x20
+        let d1 = 0, d2 = 0
+        while (k && (addr < 0x28)) {
+            pins.i2cWriteNumber(addr, 0xffffffff, NumberFormat.Int32LE)
+            d1 = pins.i2cReadNumber(addr, NumberFormat.Int8LE) % 16
+            pins.i2cWriteNumber(addr, 0, NumberFormat.Int16LE)
+            d2 = pins.i2cReadNumber(addr, NumberFormat.Int8LE)
+            if ((d1 == 7) && (d2 == 0)) k = false
+            else addr += 1
+        }
+        if (!k) return addr
+
+        addr = 0x38
+        while (k && (addr < 0x40)) {
+            pins.i2cWriteNumber(addr, 0xffffffff, NumberFormat.Int32LE)
+            d1 = pins.i2cReadNumber(addr, NumberFormat.Int8LE) % 16
+            pins.i2cWriteNumber(addr, 0, NumberFormat.Int16LE)
+            d2 = pins.i2cReadNumber(addr, NumberFormat.Int8LE)
+            if ((d1 == 7) && (d2 == 0)) k = false
+            else addr += 1
+        }
+        if (!k) return addr
+        else return 0
+    }
+
     /**
      * 初始化 LCD, 设置 I2C 地址。根据芯片不同地址有两种，PCF8574 是 39，PCF8574A 是 63。
      * @param address is i2c address for LCD, eg: 39, 63
@@ -49,7 +77,8 @@ namespace I2C_LCD1602 {
     //% blockId="I2C_LCD1620_SET_ADDRESS" block="初始化液晶，I2C 地址 %addr"
     //% weight=100 blockGap=8
     export function LcdInit(address: number) {
-        i2cAddr = address
+        if (Addr == 0) i2cAddr = AutoAddr()
+        else i2cAddr = Addr
         BK = 8
         RS = 0
         cmd(0x33)       // set 4bit mode
