@@ -76,7 +76,7 @@ namespace I2C_LCD1602 {
      */
     //% blockId="I2C_LCD1620_SET_ADDRESS" block="初始化液晶，I2C 地址 %addr"
     //% weight=100 blockGap=8
-    export function LcdInit(address: number) {
+    export function LcdInit(Addr: number) {
         if (Addr == 0) i2cAddr = AutoAddr()
         else i2cAddr = Addr
         BK = 8
