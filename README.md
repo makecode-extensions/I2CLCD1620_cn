@@ -1,26 +1,41 @@
 # I2C液晶1602
 
-makecode I2C 液晶 1602 软件包  
+makecode I2C 液晶 1602 扩展  
 
 作者: shaoziyang  
 日期: 2018.Mar  
 
-![](https://raw.githubusercontent.com/microbit-makecode-packages/I2CLCD1620_cn/master/icon.png)  
   
-![](https://raw.githubusercontent.com/microbit-makecode-packages/I2CLCD1620_cn/master/lcd.jpg)
+![](lcd.jpg)
 
-## 使用方法
 
-打开 makecode 编辑器，在项目中选择添加软件包，然后在地址栏输入下面网址  
+## 添加扩展
 
-https://github.com/microbit-makecode-packages/I2CLCD1620_cn  
+打开 makecode 编辑器，在项目中选择扩展，然后在地址栏输入下面网址  
 
-搜索后就可以添加并使用本软件包了。
+https://github.com/makecode-packages/I2CLCD1620_cn  
+
+搜索后就可以添加并使用扩展了。
+
+## 基本用法
+```
+let item = 0
+OLED12864_I2C.init(60)
+item = 0
+basic.forever(() => {
+    OLED12864_I2C.showNumber(0, 0, item, 1)
+    item += 1
+    basic.pause(1000)
+}) 
+```
 
 ## I2C 地址
 有两种I2C液晶模块，它们的地址不相同：    
-- PCF8574: 39  
-- PCF8574A: 63  
+- 39: PCF8574  
+- 63: PCF8574A  
+
+如果将地址设置为0，扩展会自动搜索并识别正确的地址
+- 0：自动地址模式
 
 ## API
 
@@ -66,7 +81,7 @@ y: 液晶Y轴坐标, [0 - 1]
 
 ## 演示
 
-![](https://raw.githubusercontent.com/microbit-makecode-packages/I2CLCD1620_cn/master/demo.jpg)
+![](demo.jpg)
 
 ## 授权方式
 
