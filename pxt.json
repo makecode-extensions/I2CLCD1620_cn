@@ -1,7 +1,7 @@
 {
-    "name": "i2cLCD1602",
+    "name": "I2C_LCD1602",
     "version": "1.5.0",
-    "description": "makecode I2C LCD1602 extension for micro:bit",
+    "description": "makecode 的 micro:bit I2C 液晶 1602 软件包，可以自动识别模块地址。",
     "license": "MIT",
     "dependencies": {
         "core": "*"
